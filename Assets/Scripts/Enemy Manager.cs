@@ -2,7 +2,7 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
-namespace AR
+namespace AJM
 {
     public class EnemyManager : MonoBehaviour
     {
