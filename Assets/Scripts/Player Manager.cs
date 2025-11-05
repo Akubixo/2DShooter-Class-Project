@@ -6,22 +6,44 @@ namespace AJM
 {
     public class PlayerManager : MonoBehaviour
     {
+        private GameManager gameManager;
+
+        public int lives;
         private float playerSpeed;
+
         private float horizontalInput;
         private float verticalInput;
+
         private float horizontalScreenLimit = 9.5f;
-        private float verticalScreenLimit = 6.5f;
+
         public GameObject bulletPrefab;
+        public GameObject explosionPrefab;
 
         public void Start()
         {
-            playerSpeed = 6f;
+            gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
+            lives = 3;
+            playerSpeed = 6.0f;
+            gameManager.ChangeLivesText(lives);
         }
 
         public void Update()
         {
             Movement();
             Shooting();
+        }
+
+        public void LoseALife()
+        {
+            //lives = lives - 1;
+            //lives -= 1;
+            lives--;
+            gameManager.ChangeLivesText(lives);
+            if (lives == 0)
+            {
+                Instantiate(explosionPrefab, transform.position, Quaternion.identity);
+                Destroy(this.gameObject);
+            }
         }
 
         public void Movement()
@@ -46,8 +68,7 @@ namespace AJM
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                Debug.Log("Pew Pew" + verticalScreenLimit);
-                Instantiate(bulletPrefab, transform.position + new Vector3(0, 1, 0), Quaternion.identity);
+                Instantiate(bulletPrefab, transform.position + new Vector3(0, 0.5f, 0), Quaternion.identity);
             }
         }
     }
