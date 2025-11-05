@@ -685,8 +685,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AJM.GameManager
   playerPrefab: {fileID: 8026619862181791966, guid: 9938e11143c63ef4280fb357de29ca03, type: 3}
-  enemyOnePrefab: {fileID: 2235343111844917446, guid: 32b96876692ef754bb9a267c5152c902, type: 3}
   cloudPrefab: {fileID: 3191613488673667241, guid: 9d2e16054e5e8c746ab410e0c7a985e2, type: 3}
+  enemyOnePrefab: {fileID: 2235343111844917446, guid: 32b96876692ef754bb9a267c5152c902, type: 3}
+  enemyMichaelPrefab: {fileID: 0}
+  enemyJuanPrefab: {fileID: 0}
   livesText: {fileID: 216985894}
   verticalScreenSize: 0
   horizontalScreenSize: 0
@@ -700,7 +702,7 @@ Transform:
   m_GameObject: {fileID: 521529624}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 18.19871, y: 1.65046, z: 94.19735}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
