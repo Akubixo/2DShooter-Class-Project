@@ -44,7 +44,7 @@ namespace AJM
 
         public void CreateEnemyJuan()
         {
-            
+            Instantiate(enemyJuanPrefab, new Vector3(Random.Range(-horizontalScreenSize, horizontalScreenSize) * 0.9f, verticalScreenSize, 0), Quaternion.Euler(0, 0, 0));
         }
 
         void CreateSky()
