@@ -25,7 +25,7 @@ namespace AJM
         void Start()
         {
             horizontalScreenSize = 10f;
-            verticalScreenSize = 6.5f;
+            verticalScreenSize = 8f;
             score = 0;
             Instantiate(playerPrefab, transform.position, Quaternion.identity);
             CreateSky();
