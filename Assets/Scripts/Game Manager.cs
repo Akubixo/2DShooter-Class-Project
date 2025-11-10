@@ -31,6 +31,7 @@ namespace AJM
             CreateSky();
             InvokeRepeating("CreateEnemyOne", 1, 3);
             InvokeRepeating("CreateEnemyJuan", 5, 7);
+            InvokeRepeating("CreateEnemyMichael", 2, 6);
         }
 
         public void CreateEnemyOne()
@@ -38,9 +39,9 @@ namespace AJM
             Instantiate(enemyOnePrefab, new Vector3(Random.Range(-horizontalScreenSize, horizontalScreenSize) * 0.9f, verticalScreenSize, 0), Quaternion.Euler(0, 0, 0));
         }
 
-        public void CreateEnemyMicheal()
+        public void CreateEnemyMichael()
         {
-            
+            Instantiate(enemyMichaelPrefab, new Vector3(Random.Range(-horizontalScreenSize, horizontalScreenSize) * 0.6f, verticalScreenSize, 0), Quaternion.Euler(0, 0, 0));
         }
 
         public void CreateEnemyJuan()
