@@ -107,6 +107,9 @@ namespace AJM
                 case 4:
                     powerupText.text = "Shield!";
                     break;
+                case 5:
+                    powerupText.text = "Extra Life!";
+                    break;
                 default:
                     powerupText.text = "No powerups yet!";
                     break;

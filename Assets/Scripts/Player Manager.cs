@@ -113,7 +113,7 @@ namespace AJM
             if (whatDidIHit.tag == "Powerup")
             {
                 Destroy(whatDidIHit.gameObject);
-                int whichPowerup = Random.Range(1, 5);
+                int whichPowerup = Random.Range(1, 6);
                 gameManager.PlaySound(1);
                 switch (whichPowerup)
                 {
@@ -140,6 +140,20 @@ namespace AJM
                         //If yes: do nothing
                         //If not: activate the shield's visibility
                         gameManager.ManagePowerupText(4);
+                        break;
+                    case 5:
+                        //Picked up extra life
+                        if (lives < 3) {
+                            lives++;
+                            gameManager.ChangeLivesText(lives);
+                            gameManager.ManagePowerupText(5);
+                            break;
+                        }
+                        else if (lives == 3) {
+                            //do nothing
+                            gameManager.ManagePowerupText(0);
+                            break;
+                        }
                         break;
                 }
             }
