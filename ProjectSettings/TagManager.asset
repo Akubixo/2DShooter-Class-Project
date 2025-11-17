@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Weapons
   - Powerup
+  - Heart
   layers:
   - Default
   - TransparentFX
