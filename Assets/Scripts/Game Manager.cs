@@ -88,12 +88,12 @@ namespace AJM
 
         void CreateCoin()
         {
-            Instantiate(coinPrefab, new Vector3(Random.Range(-horizontalScreenSize * 0.8f, horizontalScreenSize * 0.8f), Random.Range(-verticalScreenSize * 0.6f, verticalScreenSize * 0.1f), 0), Quaternion.identity);
+            Instantiate(coinPrefab, new Vector3(Random.Range(-horizontalScreenSize * 0.8f, horizontalScreenSize * 0.8f), Random.Range(-verticalScreenSize * 0.5f, verticalScreenSize * 0.1f), 0), Quaternion.identity);
         }
 
         void CreateHeartPowerup()
         {
-            Instantiate(heartPrefab, new Vector3(Random.Range(-horizontalScreenSize * 0.8f, horizontalScreenSize * 0.8f), Random.Range(-verticalScreenSize * 0.6f, verticalScreenSize * 0.1f), 0), Quaternion.identity);
+            Instantiate(heartPrefab, new Vector3(Random.Range(-horizontalScreenSize * 0.8f, horizontalScreenSize * 0.8f), Random.Range(-verticalScreenSize * 0.5f, verticalScreenSize * 0.1f), 0), Quaternion.identity);
         }
 
         void CreateSky()

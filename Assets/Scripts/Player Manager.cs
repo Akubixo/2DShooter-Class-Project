@@ -151,12 +151,10 @@ namespace AJM
                 {
                     lives++;
                     gameManager.ChangeLivesText(lives);
-                    gameManager.ManagePowerupText(5);
                 }
                 else if (lives == 3)
                 {
                     gameManager.AddScore(1);
-                    gameManager.ManagePowerupText(0);
                 }
             }
         }
