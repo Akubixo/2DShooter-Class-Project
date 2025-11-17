@@ -113,7 +113,7 @@ namespace AJM
             if (whatDidIHit.tag == "Powerup")
             {
                 Destroy(whatDidIHit.gameObject);
-                int whichPowerup = Random.Range(1, 6);
+                int whichPowerup = Random.Range(1, 5);
                 gameManager.PlaySound(1);
                 switch (whichPowerup)
                 {

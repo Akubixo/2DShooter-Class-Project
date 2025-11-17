@@ -20,6 +20,7 @@ namespace AJM
         public GameObject gameOverText;
         public GameObject restartText;
         public GameObject powerupPrefab;
+        public GameObject coinPrefab;
         public GameObject audioPlayer;
 
         public AudioClip powerupSound;
@@ -51,6 +52,7 @@ namespace AJM
             InvokeRepeating("CreateEnemyJuan", 5, 7);
             InvokeRepeating("CreateEnemyMichael", 2, 6);
             StartCoroutine(SpawnPowerup());
+            StartCoroutine(SpawnCoin());
             powerupText.text = "No powerups yet!";
         }
 
@@ -78,6 +80,11 @@ namespace AJM
         }
 
         void CreatePowerup()
+        {
+            Instantiate(powerupPrefab, new Vector3(Random.Range(-horizontalScreenSize * 0.8f, horizontalScreenSize * 0.8f), Random.Range(-verticalScreenSize * 0.7f, verticalScreenSize * 0.1f), 0), Quaternion.identity);
+        }
+
+        void CreateCoin()
         {
             Instantiate(powerupPrefab, new Vector3(Random.Range(-horizontalScreenSize * 0.8f, horizontalScreenSize * 0.8f), Random.Range(-verticalScreenSize * 0.7f, verticalScreenSize * 0.1f), 0), Quaternion.identity);
         }
@@ -122,6 +129,14 @@ namespace AJM
             yield return new WaitForSeconds(spawnTime);
             CreatePowerup();
             StartCoroutine(SpawnPowerup());
+        }
+
+        IEnumerator SpawnCoin()
+        {
+            float spawnTime = Random.Range(3, 5);
+            yield return new WaitForSeconds(spawnTime);
+            CreateCoin();
+            StartCoroutine(SpawnCoin());
         }
 
         public void PlaySound(int whichSound)
