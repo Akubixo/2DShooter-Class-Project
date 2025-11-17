@@ -142,21 +142,21 @@ namespace AJM
                         gameManager.ManagePowerupText(4);
                         break;
                 }
+            }
 
-                if (whatDidIHit.tag == "Heart")
+            if (whatDidIHit.tag == "Heart")
+            {
+                Destroy(whatDidIHit.gameObject);
+                if (lives < 3)
                 {
-                    Destroy(whatDidIHit.gameObject);
-                    if (lives < 3)
-                    {
-                        lives++;
-                        gameManager.ChangeLivesText(lives);
-                        gameManager.ManagePowerupText(5);
-                    }
-                    else if (lives == 3)
-                    {
-                        gameManager.AddScore(1);
-                        gameManager.ManagePowerupText(0);
-                    }
+                    lives++;
+                    gameManager.ChangeLivesText(lives);
+                    gameManager.ManagePowerupText(5);
+                }
+                else if (lives == 3)
+                {
+                    gameManager.AddScore(1);
+                    gameManager.ManagePowerupText(0);
                 }
             }
         }
