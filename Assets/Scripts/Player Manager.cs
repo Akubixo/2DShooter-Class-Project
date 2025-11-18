@@ -22,6 +22,8 @@ namespace AJM
         public GameObject thrusterPrefab;
         public GameObject shieldPrefab;
 
+        private bool hasShield = false;
+
         public void Start()
         {
             gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
@@ -39,6 +41,20 @@ namespace AJM
 
         public void LoseALife()
         {
+            if (hasShield)
+            {
+                hasShield = false;
+
+                if (shieldPrefab != null)
+                {
+                    shieldPrefab.SetActive(false);
+                }
+
+                gameManager.ManagePowerupText(0);
+                gameManager.PlaySound(2);
+
+                return;
+            }
             //lives = lives - 1;
             //lives -= 1;
             lives--;
@@ -135,11 +151,16 @@ namespace AJM
                         gameManager.ManagePowerupText(3);
                         break;
                     case 4:
-                        //Picked up shield
-                        //Do I already have a shield?
-                        //If yes: do nothing
-                        //If not: activate the shield's visibility
-                        gameManager.ManagePowerupText(4);
+                        if (!hasShield)
+                        {
+                            hasShield = true;
+
+                            if (shieldPrefab != null)
+                            {
+                                shieldPrefab.SetActive(true);
+                            }
+                            gameManager.ManagePowerupText(4);
+                        }
                         break;
                 }
             }
