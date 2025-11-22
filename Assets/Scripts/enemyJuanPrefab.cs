@@ -23,14 +23,19 @@ namespace AJM
         public void Update()
         {
             transform.Translate(new Vector3(direction, directionY, 0) * Time.deltaTime * speed);
+            
+
             if (transform.position.x > 8.5f || transform.position.x < -8.5f)
             {
                 direction *= -1;
+                
             }
 
             if (transform.position.y < -6.5f)
             {
+                
                 Destroy(this.gameObject);
+                
             }
         }
 

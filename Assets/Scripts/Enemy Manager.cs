@@ -21,6 +21,8 @@ namespace AJM
             if (transform.position.y < -6.5f)
             {
                 Destroy(this.gameObject);
+                
+
             }
         }
 
